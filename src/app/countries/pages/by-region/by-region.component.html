@@ -1,0 +1,5 @@
+<div class="prose mb-4">
+  <h2>Por Region</h2>
+</div>
+<app-searchbox customPlaceholder="Escribe la region" (onSearch)="searchByRegion($event)"></app-searchbox>
+<app-tableresults [countries]="countries"></app-tableresults>

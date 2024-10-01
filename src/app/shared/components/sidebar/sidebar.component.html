@@ -1,0 +1,20 @@
+<div class="sidebar py-4 px-4">
+  <div class="prose flex items-center mb-4">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
+    </svg>       
+    <h2 class="mt-0 ml-1">CountryApp</h2>
+  </div>
+  <ul class="menu bg-base-200 rounded-box w-56">
+    <!-- Para usar routerLink debemos importar el modulo RouterModule, entonces funcionan los links junto con el router.
+    Para agregar la clase active de forma dinamica dependiendo de la ruta actual, solo agregamos routerLinkActive="active".
+    -->
+    <!-- Agregagmos exact:true para que la ruta sea exacta en todos los casos y no hay confusiones, especialmente cuando la ruta home es solo un / -->
+    <!-- <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">Home</a></li>
+    <li><a routerLink="about" routerLinkActive="active">About</a></li>
+    <li><a routerLink="contact" routerLinkActive="active">Contact</a></li> -->
+    <li><a routerLink="countries/by-capital" routerLinkActive="active">Por capital</a></li>
+    <li><a routerLink="countries/by-country" routerLinkActive="active">Por pais</a></li>
+    <li><a routerLink="countries/by-region" routerLinkActive="active">Por region</a></li>
+  </ul>
+</div>
