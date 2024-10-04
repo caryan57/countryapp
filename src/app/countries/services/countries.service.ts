@@ -62,7 +62,7 @@ export class CountriesService {
   }
 
   searchByCountry(query: string): Observable<Country[]> {
-    const url = `${this.API_URL}/name/${query}`;
+    const url = `${this.API_URL}/translation/${query}`;
     return this.handleRequest(url)
     .pipe(
       tap((countries: Country[]) => this.cacheStore.byCountry = { query, countries }),
