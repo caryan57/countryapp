@@ -1,6 +1,11 @@
+<!-- (keyup.enter)="emitSearch(searchBox.value)" -->
 <div class="max-w-screen-lg mb-4">
   <label class="input input-bordered flex items-center gap-2">
-    <input type="text" class="grow" [placeholder]="customPlaceholder" (keyup.enter)="emitSearch(searchBox.value)" #searchBox />
+    <input type="text" class="grow"
+    [placeholder]="customPlaceholder"
+    (keyup)="emitSearch(searchBox.value)"
+    [value]="initalValue"
+    #searchBox />
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"

@@ -1,5 +1,10 @@
 <div class="prose mb-4">
-  <h2>Por Region</h2>
+  <h2>Por Region / {{ selectedRegion }}</h2>
 </div>
-<app-searchbox customPlaceholder="Escribe la region" (onSearch)="searchByRegion($event)"></app-searchbox>
+<div class="dropdown">
+  <div tabindex="0" role="button" class="btn m-1">Regiones</div>
+  <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+    <li *ngFor="let region of regions"><a (click)="searchByRegion(region)">{{ region }}</a></li>
+  </ul>
+</div>
 <app-tableresults [countries]="countries"></app-tableresults>

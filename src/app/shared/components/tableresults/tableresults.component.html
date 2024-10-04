@@ -38,7 +38,7 @@
           <td>{{ country.capital }}</td>
           <td>{{ country.region }}</td>
           <td>{{ country.population | number }}</td>
-          <td><a href="" class="link">Ver mas</a></td>
+          <td><a [routerLink]="['/countries/by/', country.cca3]" class="link">Ver mas</a></td>
         </tr>
       </tbody>
     </table>

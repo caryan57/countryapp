@@ -1,5 +1,5 @@
 <div class="prose mb-4">
   <h2>Por Pais</h2>
 </div>
-<app-searchbox customPlaceholder="Escribe el pais" (onSearch)="searchByCountry($event)"></app-searchbox>
+<app-searchbox customPlaceholder="Escribe el pais" (onSearch)="searchByCountry($event)" [initalValue]="initValue"></app-searchbox>
 <app-tableresults [countries]="countries"></app-tableresults>

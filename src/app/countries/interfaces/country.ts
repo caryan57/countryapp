@@ -103,6 +103,6 @@ export interface NativeName {
 }
 
 export interface Translation {
-  official: string;
-  common:   string;
+  official?: string;
+  common?:   string;
 }

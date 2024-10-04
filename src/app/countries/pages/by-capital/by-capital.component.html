@@ -1,5 +1,6 @@
 <div class="prose mb-4">
   <h2>Por Capital</h2>
 </div>
-<app-searchbox customPlaceholder="Escribe la capital" (onSearch)="searchByCapital($event)"></app-searchbox>
+<app-searchbox customPlaceholder="Escribe la capital" (onSearch)="searchByCapital($event)" [initalValue]="initValue"></app-searchbox>
+<app-shared-loading-spinner *ngIf="isLoading"></app-shared-loading-spinner>
 <app-tableresults [countries]="countries"></app-tableresults>

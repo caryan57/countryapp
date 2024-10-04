@@ -1,1 +1,66 @@
-<p>country works!</p>
+<div *ngIf="countries.length === 0; else result" role="alert" class="alert max-w-screen-lg">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-6 w-6 shrink-0 stroke-current"
+    fill="none"
+    viewBox="0 0 24 24">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+  </svg>
+  <span>Cargando resultados...</span>
+  <app-shared-loading-spinner></app-shared-loading-spinner>
+</div>
+
+<ng-template #result>
+  <div class="card bg-base-100 flex flex-col md:flex-row shadow-xl p-4 max-w-2xl mt-4 mx-auto" *ngFor="let country of countries">
+    <figure class="max-w-36 mx-auto">
+      <img
+        src="{{ country.flags.svg }}"
+        alt="{{ country.name.common }}" />
+    </figure>
+    <div class="card-body">
+      <h2 class="text-4xl"><b>Pais:</b> {{ country.translations["spa"].official | titlecase }}</h2>
+      <hr>
+      <div class="overflow-x-auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Codigo</th>
+              <th>Capital</th>
+              <th>Poblacion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>{{ country.cca3}}</th>
+              <td>{{ country.capital }}</td>
+              <td>{{ country.population | number }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 class="font-bold text-xl mt-4">Traducciones:</h2>
+        <div class="flex flex-wrap gap-4 mt-4">
+          <div class="badge badge-accent">{{ country.translations["ara"].common }}</div>
+          <div class="badge badge-accent">{{ country.translations["bre"].common }}</div>
+          <div class="badge badge-accent">{{ country.translations["ces"].common }}</div>
+          <div class="badge badge-accent">{{ country.translations["deu"].common }}</div>
+          <div class="badge badge-accent">{{ country.translations["fra"].common }}</div>
+          <div class="badge badge-accent">{{ country.translations["ita"].common }}</div>
+          <div class="badge badge-accent">{{ country.translations["kor"].common }}</div>
+          <div class="badge badge-accent">{{ country.translations["spa"].common }}</div>
+          <div class="badge badge-accent">{{ country.translations["por"].common }}</div>
+          <div class="badge badge-accent">{{ country.translations["rus"].common }}</div>
+        </div>
+      </div>
+      <div class="breadcrumbs text-sm flex flex-row-reverse">
+        <ul>
+          <li><a routerLink="">Regresar</a></li>
+          <li>{{ country.name.common }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-template>
